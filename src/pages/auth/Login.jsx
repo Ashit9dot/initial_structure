@@ -1,18 +1,75 @@
-import React from 'react'
+import React from "react";
+import AppForm from "../common/form/AppForm";
+import AppFormItem from "../common/form/AppFormItem";
+import { Button } from "antd";
 
 const Login = () => {
+
+  const onFinish = (values) => {
+    console.log("Form Values:", values);
+  };
+
   return (
     <>
-    <div className='flex'>
-      <div className='bg-amber-100 h-52 w-full flex justify-center py-10'>
-        <p className='text-2xl font-bold'>Login</p>
-      </div>
-      <div className='bg-purple-100 w-full flex justify-center items-center'>
-        <img src='././' />
-      </div>
-    </div>
-    </>
-  )
-}
+      <div className="flex">
+        <div className="bg-amber-100 w-full py-10">
+          <p className="text-2xl font-bold text-center mb-10">Login</p>
 
-export default Login
+          <div className="flex justify-center">
+            <AppForm
+              onFinish={onFinish}
+              initialValues={{ role: "user" }}
+              className="max-w-[500px] w-full"
+            >
+              <div className="grid grid-cols-2 gap-4">
+                <AppFormItem
+                  name="firstName"
+                  label="First Name"
+                  placeholder="Enter first name"
+                  rules={[{ required: true, message: "Required" }]}
+                />
+
+                <AppFormItem
+                  name="email"
+                  label="Email"
+                  type="text"
+                  rules={[{ required: true, message: "Email required" }]}
+                />
+
+                <AppFormItem
+                  name="password"
+                  label="Password"
+                  type="password"
+                  rules={[{ required: true, message: "Password required" }]}
+                />
+
+                <AppFormItem
+                  name="role"
+                  label="Role"
+                  type="select"
+                  options={[
+                    { label: "Admin", value: "admin" },
+                    { label: "User", value: "user" },
+                  ]}
+                />
+
+                <AppFormItem name="dob" label="Date of Birth" type="date" />
+
+                <AppFormItem name="bio" label="Bio" type="textarea" />
+              </div>
+
+              <Button type="primary" htmlType="submit">
+                Submit
+              </Button>
+            </AppForm>
+          </div>
+        </div>
+        <div className="bg-purple-100 w-full flex justify-center items-center">
+          <img src="././" />
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Login;
