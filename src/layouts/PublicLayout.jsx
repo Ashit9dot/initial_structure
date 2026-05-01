@@ -1,14 +1,16 @@
-import { Outlet } from "react-router-dom";
-import Logo from "../assets/ak.jpg"
+import { Outlet, useLocation } from "react-router-dom";
 
 const PublicLayout = () => {
+  const location = useLocation();
+  console.log(location, "=====location");
   return (
     <>
-      {/* <header>Public Navbar</header> */}
-      <div className="flex justify-center">
-        <img src={Logo} width={70} className="rounded-lg" />
+      <div className="flex h-screen">
+        <div className="w-full bg-black/5 flex flex-col items-center justify-center">
+          <Outlet />
+        </div>
+        <div className="w-full bg-gray-500 text-center">Image</div>
       </div>
-      <Outlet />
     </>
   );
 };
