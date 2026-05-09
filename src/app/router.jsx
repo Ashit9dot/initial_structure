@@ -8,6 +8,7 @@ import DashboardHome from "../pages/dashboard/DashboardHome";
 import Profile from "../pages/dashboard/Profile";
 import NotFound from "../pages/common/NotFound";
 import ProtectedRoute from "../routes/ProtectedRoute";
+import PublicRoute from "../routes/PublicRoute";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,14 @@ const router = createBrowserRouter([
     element: <PublicLayout />,
     children: [
       { index: true, element: <Home /> },
-      { path: "login", element: <Login /> },
+      {
+        path: "login",
+        element: (
+          <PublicRoute>
+            <Login />
+          </PublicRoute>
+        ),
+      },
       { path: "register", element: <Register /> },
     ],
   },

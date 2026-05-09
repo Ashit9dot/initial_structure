@@ -2,16 +2,18 @@ import { Outlet, useLocation } from "react-router-dom";
 
 const PublicLayout = () => {
   const location = useLocation();
-  console.log(location, "=====location");
+  const isAuthPage = ["/login", "/register"].includes(location.pathname);
+
   return (
-    <>
-      <div className="flex h-screen">
-        <div className="w-full bg-black/5 flex flex-col items-center justify-center">
-          <Outlet />
-        </div>
-        <div className="w-full bg-gray-500 text-center">Image</div>
-      </div>
-    </>
+    <div
+      className={
+        isAuthPage
+          ? "min-h-screen bg-gray-100"
+          : "min-h-screen bg-white"
+      }
+    >
+      <Outlet />
+    </div>
   );
 };
 

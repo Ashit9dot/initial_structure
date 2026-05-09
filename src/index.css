@@ -1,1 +1,161 @@
 @import "tailwindcss";
+
+.auth-page {
+  @apply flex min-h-screen items-center justify-center p-4;
+}
+
+.auth-card {
+  @apply w-full max-w-md rounded-[28px] bg-white shadow-sm ring-1 ring-black/5;
+}
+
+.auth-card-body {
+  @apply space-y-7 p-8 sm:p-9;
+}
+
+.auth-header {
+  @apply space-y-2 text-center;
+}
+
+.auth-brand {
+  @apply text-sm font-medium tracking-wide text-gray-500 uppercase;
+}
+
+.auth-title {
+  @apply text-center text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl;
+}
+
+.auth-subtitle {
+  @apply text-sm text-gray-600;
+}
+
+.auth-form {
+  @apply space-y-6;
+}
+
+.auth-form .ant-form-item {
+  margin-bottom: 24px;
+}
+
+.auth-form .ant-form-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.auth-form .ant-form-item-label {
+  padding-bottom: 8px;
+}
+
+.auth-form .ant-form-item-label > label {
+  @apply text-sm font-medium text-gray-800;
+}
+
+.auth-input.ant-input,
+.auth-input.ant-input-affix-wrapper,
+.auth-input.ant-select .ant-select-selector {
+  @apply rounded-2xl border border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 shadow-none transition-colors;
+  min-height: 54px;
+}
+
+.auth-input.ant-input,
+.auth-input.ant-input-affix-wrapper {
+  @apply py-3;
+  min-height: 54px;
+}
+
+.auth-input.ant-select {
+  width: 100%;
+}
+
+.auth-input.ant-select .ant-select-selector {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.auth-input.ant-select .ant-select-selection-item,
+.auth-input.ant-select .ant-select-selection-placeholder {
+  line-height: 52px !important;
+}
+
+.auth-input.ant-select .ant-select-arrow,
+.auth-input.ant-input-affix-wrapper .ant-input-suffix {
+  color: #9ca3af;
+}
+
+.auth-input.ant-input::placeholder,
+.auth-input.ant-input-affix-wrapper input::placeholder,
+.auth-input.ant-select .ant-select-selection-placeholder {
+  @apply text-gray-400;
+}
+
+.auth-input.ant-input:hover,
+.auth-input.ant-input:focus,
+.auth-input.ant-input-affix-wrapper:hover,
+.auth-input.ant-input-affix-wrapper:focus-within,
+.auth-input.ant-select:hover .ant-select-selector,
+.auth-input.ant-select.ant-select-focused .ant-select-selector {
+  @apply border-gray-300 bg-white shadow-none;
+}
+
+.auth-input.ant-input-affix-wrapper .ant-input {
+  @apply bg-transparent px-0 py-0 shadow-none;
+}
+
+.auth-input.ant-input:-webkit-autofill,
+.auth-input.ant-input:-webkit-autofill:hover,
+.auth-input.ant-input:-webkit-autofill:focus,
+.auth-input.ant-input-affix-wrapper input:-webkit-autofill,
+.auth-input.ant-input-affix-wrapper input:-webkit-autofill:hover,
+.auth-input.ant-input-affix-wrapper input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #f9fafb inset;
+  -webkit-text-fill-color: #111827;
+  caret-color: #111827;
+  transition: background-color 9999s ease-out 0s;
+}
+
+.auth-input.ant-input:focus:-webkit-autofill,
+.auth-input.ant-input-affix-wrapper input:focus:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+}
+
+.auth-row {
+  @apply flex items-center justify-between gap-4 text-sm m-0;
+}
+
+.auth-remember {
+  margin-bottom: 0;
+}
+
+.auth-checkbox-label {
+  @apply flex cursor-pointer items-center gap-2 text-gray-600;
+}
+
+.auth-checkbox {
+  @apply h-4 w-4 rounded border-gray-300;
+  accent-color: #111827;
+}
+
+.auth-link-button {
+  @apply border-none bg-transparent p-0 font-medium text-gray-600 transition-colors hover:text-gray-900;
+}
+
+.auth-submit-button {
+  @apply w-full rounded-full bg-gray-900 px-4 py-3 text-sm font-semibold text-white transition-colors hover:text-white! hover:bg-black! mt-5;
+  min-height: 52px;
+}
+
+.auth-footer {
+  @apply text-center text-sm text-gray-600 mt-2;
+}
+
+.auth-footer a {
+  @apply font-medium text-gray-900 transition-colors hover:text-black;
+}
+
+@media (max-width: 480px) {
+  .auth-card-body {
+    @apply p-6;
+  }
+
+  .auth-row {
+    @apply flex-col items-start;
+  }
+}
