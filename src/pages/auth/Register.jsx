@@ -23,7 +23,6 @@ const Register = () => {
       <div className="auth-card">
         <div className="auth-card-body">
           <div className="auth-header">
-            {/* <p className="auth-brand">Nexus CRM</p> */}
             <h1 className="auth-title">Create account</h1>
             <p className="auth-subtitle">
               Set up your profile to start using your workspace.
